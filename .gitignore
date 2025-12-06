@@ -1,0 +1,64 @@
+# Arduino IDE
+*.ino~
+*.ino.bak
+*.hex
+*.eep
+*.elf
+*.map
+
+# Build files
+build/
+*.o
+*.a
+
+# Libraries (if using external libraries, uncomment)
+# libraries/
+
+# Arduino IDE settings
+.vscode/
+.idea/
+*.sublime-*
+
+# Operating System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*~
+*.swp
+*.swo
+
+# Log files
+*.log
+
+# Personal notes
+notes.txt
+todo.txt
+
+# Large media files (uncomment if needed)
+# *.mp4
+# *.avi
+# *.mov
+
+# Backup files
+*.backup
+*.old
+
+# Python (if using any Python scripts)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+
+# Documentation builds
+docs/_build/
+
+# Test files
+test/
+tests/
