@@ -372,3 +372,8 @@ If you encounter issues with connections:
 
 *Last Updated: 2023*  
 *Circuit tested and verified on Arduino Uno R3*
+
+---
+
+## ⚠️ Disclaimer
+All diagrams created by AI.
