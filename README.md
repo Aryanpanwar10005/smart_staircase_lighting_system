@@ -1194,7 +1194,7 @@ If problems persist:
    - Search GitHub Issues
 
 3. **Contact:**
-   - **Email:** aryanpanwar10005@gmail.com
+   - **Email:** aryanpanwar12311@gmail.com
    - **Create GitHub Issue:** Include photos, code, and detailed description
    - **LinkedIn:** [aryan-panwar-b5322b269](https://www.linkedin.com/in/aryan-panwar-b5322b269)
 
@@ -1271,7 +1271,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### Connect With Me
 
-- 📧 **Email:** aryanpanwar10005@gmail.com
+- 📧 **Email:** aryanpanwar12311@gmail.com
 - 💼 **LinkedIn:** [aryan-panwar-b5322b269](https://www.linkedin.com/in/aryan-panwar-b5322b269)
 - 🐱 **GitHub:** [@Aryanpanwar10005](https://github.com/Aryanpanwar10005)
 
@@ -1311,7 +1311,7 @@ Check out my other embedded systems and IoT projects:
 
 Have ideas for improvements? Found a bug? Want to share your implementation?
 
-- 📧 Email me: aryanpanwar10005@gmail.com
+- 📧 Email me: aryanpanwar12311@gmail.com
 - 💬 Open an issue on GitHub
 - 🔗 Connect on LinkedIn
 
