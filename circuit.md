@@ -365,7 +365,7 @@ If you encounter issues with connections:
 4. Check continuity of all connections
 
 **Contact:**
-- Email: aryanpanwar10005@gmail.com
+- Email: aryanpanwar12311@gmail.com
 - Create an issue on GitHub repository
 
 ---
