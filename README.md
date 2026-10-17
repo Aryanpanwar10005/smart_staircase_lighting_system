@@ -1,6 +1,6 @@
 # Smart Staircase Lighting System 💡
 
-An intelligent, motion-activated lighting solution for staircases that reduces energy consumption by 45% through automated detection and control.
+A motion-activated lighting system for staircases: IR sensors at both ends switch the lights on when someone uses the stairs, and a timer switches them off again, so the lights are not left on when nobody is there.
 
 ![Project Status](https://img.shields.io/badge/Status-Completed-success)
 ![Arduino](https://img.shields.io/badge/Arduino-IDE-00979D?logo=arduino)
@@ -32,7 +32,7 @@ An intelligent, motion-activated lighting solution for staircases that reduces e
 
 This project automatically controls staircase lighting based on human presence detection. When someone approaches the stairs from either direction (top or bottom), IR sensors detect their movement and turn on the lights. After a preset time, the lights automatically turn off, eliminating the need for manual switches and significantly reducing energy waste.
 
-**Key Achievement:** **45% reduction in energy consumption** compared to traditional always-on staircase lighting.
+**Expected benefit:** lower energy use than always-on staircase lighting, because the lights run only while the stairs are in use. How much is saved depends on stair traffic and the timeout setting.
 
 ---
 
@@ -47,9 +47,9 @@ Traditional staircase lighting systems face several issues:
 - **Safety Hazard**: Dark staircases increase risk of falls and accidents
 - **High Bills**: Continuous operation leads to increased electricity costs
 
-**Real-World Impact:**
-- Average household staircase lights consume ~100W × 24 hours = 2.4 kWh/day
-- Annual cost: ₹2,500-3,000 for always-on operation
+**Illustrative estimate (a 100 W load left on all day):**
+- 100W × 24 hours = 2.4 kWh/day
+- About 876 kWh a year; the cost depends on the local tariff
 - Carbon footprint: ~730 kg CO₂/year per staircase
 
 ---
@@ -63,11 +63,9 @@ An automated motion-sensing system that:
 3. **Auto-shutoff** after configurable timeout period (default: 15 seconds)
 4. **Works bi-directionally** for upward and downward movement
 
-**📊 Measurable Impact:**
-- **45% energy savings**: Lights only on when needed (~13 hours/day → ~7 hours/day)
-- **Annual savings**: ₹1,125-1,350 per staircase
-- **ROI**: System pays for itself in 6-8 months
-- **Carbon reduction**: ~330 kg CO₂/year per installation
+**📊 Expected Benefits:**
+- **Lower energy use**: Lights are on only while the stairs are in use, not all day
+- **Lower running cost**: The saving and payback time depend on stair traffic, the timeout setting and the local tariff (see [Performance Metrics](#-performance-metrics) to estimate them)
 - **Enhanced safety**: Always-lit path when needed, no fumbling for switches
 - **Convenience**: Zero manual intervention required
 
@@ -80,8 +78,8 @@ An automated motion-sensing system that:
 - ✅ **Instant Response**: < 100ms activation time
 - ✅ **Bi-directional Detection**: Works for both up and down movement
 - ✅ **Smart Timer**: Configurable auto-shutoff delay (10-30 seconds)
-- ✅ **Energy Efficient**: 45% reduction in power consumption
-- ✅ **Low Standby Power**: < 50mA when idle
+- ✅ **Energy Saving**: Lights run only while the stairs are in use
+- ✅ **Low Standby Power**: Only the Arduino and two IR sensors draw power when idle
 
 ### Technical Features
 - ✅ **Debouncing Logic**: Prevents false triggers from vibrations
@@ -710,16 +708,15 @@ Serial.println("Motion detected at TOP sensor");
 
 ## 📊 Performance Metrics
 
-### Energy Efficiency Data
+### Estimating Energy Savings
 
-| Parameter | Traditional System | Smart System | Improvement |
-|-----------|-------------------|--------------|-------------|
-| **Daily Operation** | 24 hours | ~13 hours | 45% reduction |
-| **Power Consumption** | 100W × 24h = 2.4 kWh | 100W × 13h = 1.3 kWh | 1.1 kWh saved |
-| **Monthly Usage** | 72 kWh | 39 kWh | 33 kWh saved |
-| **Annual Usage** | 876 kWh | 474 kWh | 402 kWh saved |
-| **Annual Cost** (₹7/kWh) | ₹6,132 | ₹3,318 | **₹2,814 saved** |
-| **CO₂ Emissions** | 730 kg/year | 395 kg/year | **335 kg reduced** |
+The saving depends on how often the stairs are used, so it is best worked out for a specific staircase:
+
+- **Always-on energy per day** = lamp wattage × hours the lights would otherwise stay on
+- **Smart system energy per day** = lamp wattage × (activations per day × on-time per activation)
+- **Saving** = the difference between the two; multiply by the local tariff for the cost saving
+
+The sketch prints a line to the Serial Monitor each time the lights switch on and off, which can be used to count activations.
 
 ### Technical Performance
 
@@ -727,22 +724,16 @@ Serial.println("Motion detected at TOP sensor");
 |--------|-------|-------|
 | **Response Time** | < 100ms | From detection to light activation |
 | **Detection Range** | 5-20 cm | Adjustable via potentiometer |
-| **Detection Accuracy** | 99%+ | False positives < 1% |
+| **Detection** | IR proximity at both ends | Pets and vibration can cause false triggers |
 | **Timer Precision** | ±50ms | Using millis() function |
-| **Standby Current** | < 50mA | Arduino + sensors idle |
-| **Active Current** | ~150mA | With relay activated |
+| **Standby Current** | Low | Arduino + two IR sensors idle |
+| **Active Current** | Higher than standby | Relay coil energised |
 | **Relay Switching** | 10A @ 250VAC | Can handle multiple lights |
-| **System Reliability** | 99.9% uptime | Tested over 3 months |
+| **Operation** | Continuous | Timer rollover (~50 days) handled in code |
 
-### Real-World Usage Data
+### Known Limitations
 
-**Based on 3-month testing:**
-- Average activations: 35-40 times per day
-- Average light-on duration: 18 seconds per activation
-- Total daily operation: 12-13 hours
-- Energy savings: 43-47% (avg. 45%)
-- Zero false negatives (missed detections)
-- False positives: < 1% (caused by pets/vibrations)
+- Pets and vibration can trigger the IR sensors (false positives)
 
 ---
 
@@ -821,7 +812,7 @@ Serial.println("Motion detected at TOP sensor");
 
 **Cost Efficiency:**
 - Low initial investment (₹1,200)
-- Quick ROI (5-6 months)
+- Payback time depends on stair traffic and the local tariff
 - Minimal maintenance (no moving parts)
 
 **Scalability:**
@@ -1278,8 +1269,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 🎓 B.Tech in Electronics and Communication Engineering  
 🏫 MIET Meerut (2022-2026)
 
-💼 **Current:** Assistant - Instrument Department, Indian Potash Limited
-
 ### Connect With Me
 
 - 📧 **Email:** aryanpanwar10005@gmail.com
@@ -1289,7 +1278,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ### Other Projects
 
 Check out my other embedded systems and IoT projects:
-- 🔋 [Wireless EV Charging System](https://github.com/Aryanpanwar10005/wireless_ev_charging) - 85% efficiency IPT
+- 🔋 [Wireless EV Charging System](https://github.com/Aryanpanwar10005/wireless_ev_charging) - Inductive power transfer prototype
 - 🤖 [4-DOF Robotic Arm](https://github.com/Aryanpanwar10005/robotic_arm_4dof) - Servo motor control
 - 🚗 Edge-Avoiding Autonomous Robot *(Coming Soon)*
 
@@ -1338,8 +1327,6 @@ Have ideas for improvements? Found a bug? Want to share your implementation?
 
 <div align="center">
 
-**Made with ❤️ by Aryan Panwar**
-
-*Transforming everyday problems into smart solutions*
+Built by [Aryan Panwar](https://aryanpanwar.in).
 
 </div>
