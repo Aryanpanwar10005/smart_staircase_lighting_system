@@ -593,7 +593,7 @@ const unsigned long LIGHT_ON_TIME = 20000; // 20 seconds
 
 ### File Organization
 ```
-code/
+smart_staircase_lighting_system/
 └── staircase_lighting.ino    # Main Arduino sketch
 ```
 
@@ -702,7 +702,7 @@ Serial.println("Motion detected at TOP sensor");
 ✅ **Configurable:** Easy to adjust parameters  
 ✅ **Debug support:** Serial output for monitoring  
 
-**Full Code:** See `code/staircase_lighting.ino` in repository
+**Full Code:** See `staircase_lighting.ino` in the repository root
 
 ---
 

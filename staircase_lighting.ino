@@ -5,7 +5,7 @@
  * 
  * Description: 
  * Automated staircase lighting system using IR sensors for motion detection.
- * Achieves 45% energy savings through intelligent auto-shutoff.
+ * Lights switch off automatically after a timeout, so they are not left on.
  * 
  * Hardware:
  * - Arduino Uno/Nano
